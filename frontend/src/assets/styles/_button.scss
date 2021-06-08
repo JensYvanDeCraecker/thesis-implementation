@@ -1,0 +1,96 @@
+@mixin button-theme($color, $colorHover, $backgroundColor, $backgroundColorHover, $borderColor: null) {
+    color: $color;
+    background-color: $backgroundColor;
+
+    &:hover,
+    &.c-button--selected {
+        color: $colorHover;
+        background-color: $backgroundColorHover;
+        filter: brightness(1.2);
+    }
+
+    &:active,
+    &.c-button--active {
+        color: $colorHover;
+        background-color: $backgroundColorHover;
+        filter: brightness(0.8);
+        box-shadow: none;
+    }
+
+    @if ($borderColor != null) {
+        &.c-button--border {
+            border: 2px solid $borderColor;
+        }
+    }
+
+    &:disabled {
+        pointer-events: none;
+        cursor: default;
+        filter: brightness(0.4);
+        box-shadow: none;
+    }
+}
+
+.c-button {
+    box-sizing: border-box;
+    min-height: 44px;
+    min-width: 44px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 4px;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.25s;
+    font-family: 'Inter';
+    font-weight: $font-weight--bold;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    padding: 0 14px;
+
+    @include button-theme($color--white, $color--white, $color--blue, $color--blue);
+
+    svg {
+        order: 1;
+        fill: currentColor;
+        min-width: 24px;
+        min-height: 24px;
+    }
+
+    span {
+        order: 2;
+    }
+
+    &.c-button--size-full-width {
+        width: 100%;
+    }
+
+    &.c-button--size-small {
+        min-height: 34px;
+        min-width: 34px;
+        padding: 0 12px;
+    }
+
+    &.c-button--icon-right {
+        span {
+            order: 1;
+        }
+
+        svg {
+            order: 2;
+        }
+    }
+
+    &.c-button--icon {
+        padding: 0;
+    }
+
+    &.c-button--color-red {
+        @include button-theme($color--white, $color--white, $color--red, $color--red);
+    }
+}

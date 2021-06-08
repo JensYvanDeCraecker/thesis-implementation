@@ -1,0 +1,35 @@
+.c-table {
+    text-align: left;
+    width: 100%;
+    border-spacing: 0;
+
+    thead {
+        background-color: rgba($color: $color--grey, $alpha: 0.12);
+        color: $color--grey;
+        font-size: 13px;
+        font-family: $font-family--secondary;
+        font-weight: $font-weight--semi-bold;
+        letter-spacing: 0;
+        line-height: 20px;
+
+        th {
+            padding: 5px;
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                padding: 5px;
+                font-size: 14px;
+                line-height: 22px;
+                font-family: $font-family--secondary;
+                letter-spacing: 0;
+            }
+
+            &.c-table--empty {
+                text-align: center;
+            }
+        }
+    }
+}

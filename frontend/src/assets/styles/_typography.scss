@@ -1,0 +1,70 @@
+@import 'variables';
+
+@mixin get-font($_name, $_url, $_weight: normal, $_style: normal) {
+    @font-face {
+        font-family: $_name;
+        src: url($_url + '.ttf') format('truetype');
+        font-weight: $_weight;
+        font-style: $_style;
+    }
+}
+
+@include get-font('Inter', '~@/assets/fonts/inter/inter-light', $font-weight--light);
+@include get-font('Inter', '~@/assets/fonts/inter/inter-regular', $font-weight);
+@include get-font('Inter', '~@/assets/fonts/inter/inter-semibold', $font-weight--semi-bold);
+@include get-font('Inter', '~@/assets/fonts/inter/inter-bold', $font-weight--bold);
+@include get-font('Avenir', '~@/assets/fonts/avenir/avenir-book', $font-weight--light);
+@include get-font('Avenir', '~@/assets/fonts/avenir/avenir-black', $font-weight--extra-bold);
+
+h1,
+.h1 {
+    color: $color--black;
+    letter-spacing: 0;
+    line-height: 36px;
+    font-family: $font-family--secondary;
+    font-size: 28px;
+    font-weight: $font-weight--light;
+    margin: 0;
+}
+
+h2,
+.h2 {
+    color: $color--black;
+    letter-spacing: 0;
+    line-height: 30px;
+    font-family: $font-family--primary;
+    font-size: 22px;
+    font-weight: $font-weight--light;
+    margin: 0;
+}
+
+p,
+.p {
+    color: $color--black;
+    letter-spacing: 0;
+    line-height: 26px;
+    font-family: $font-family--secondary;
+    font-weight: $font-weight--light;
+    font-size: 16px;
+    margin: 0;
+}
+
+a,
+.a {
+    @extend .p;
+    color: $color--blue;
+    font-weight: $font-weight--bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.c-text--center {
+    text-align: center;
+}
+
+.c-form__title {
+    line-height: 52px;
+    font-family: $font-family--primary;
+    font-size: 42px;
+    margin: 0;
+}

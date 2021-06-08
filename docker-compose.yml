@@ -1,0 +1,20 @@
+version: "3.9"
+services: 
+    app:
+        build:
+            context: ./
+        ports: 
+          - "8080:80"
+        environment: 
+            App__UseCache: "true"
+        depends_on:
+            - cache
+            - database
+    database:
+        image: "mcr.microsoft.com/mssql/server:2017-latest-ubuntu"
+        environment:
+            SA_PASSWORD: mssql123!
+            ACCEPT_EULA: "Y"
+            MSSQL_PID: Express
+    cache:
+        image: redis

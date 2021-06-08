@@ -1,0 +1,23 @@
+.c-index {
+    margin: 50px 50px 0 50px;
+    display: flex;
+    gap: 10px;
+
+    .c-index__controls {
+        min-width: 500px;
+        background-color: $color--white;
+        border-radius: 4px;
+        box-shadow: 0 2px 13px 0 rgba($color: $color--grey, $alpha: 0.1);
+        padding: 20px;
+        height: min-content;
+        > h1,
+        > h2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+body {
+    background-color: $color--red;
+}

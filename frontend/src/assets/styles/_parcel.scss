@@ -1,0 +1,27 @@
+.c-parcel {
+    width: 100%;
+    background-color: $color--white;
+    border-radius: 4px;
+    box-shadow: 0 2px 13px 0 rgba($color: $color--grey, $alpha: 0.1);
+    padding: 20px;
+    min-height: 500px;
+    > h1 {
+        margin-bottom: 10px;
+    }
+
+    .c-parcel__addresses {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 5px;
+    }
+
+    > h2 {
+        margin-bottom: 10px;
+    }
+
+    &.c-parcel--empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,19 @@
+.c-address {
+    width: 100%;
+
+    dt {
+        font-weight: $font-weight--bold;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        font-family: $font-family--secondary;
+    }
+
+    dd + dt {
+        margin-top: 20px;
+    }
+
+    dd {
+        margin-left: 0;
+        font-family: $font-family--secondary;
+    }
+}
